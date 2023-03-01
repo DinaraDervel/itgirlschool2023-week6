@@ -4,20 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="assets/styles/normalize.css" />
     <link rel="stylesheet" href="assets/styles/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
     <title>Creative Design</title>
   </head>
   <style>
     .container {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      grid-template-rows: 10% 1fr 2fr repeat(3, 1fr) 10%;
+      display: grid;
+
       grid-template-columns: 1fr;
+      grid-template-rows: 150px 1000px 2000px 850px 1000px 1000px 150px;
       grid-template-areas:
         "header"
-        "main"
+        "home"
         "portfolio"
         "about"
         "testimonials"
@@ -25,23 +32,228 @@
         "footer";
       background-color: black;
     }
+
     .header {
       grid-area: header;
+      align-self: center;
+      margin: 0 auto;
+      width: 85%;
+
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
     }
-    .main {
-      grid-area: main;
+    .logo a {
+      font-family: "Inter", Times, serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      color: #ffffff;
     }
+    .menu {
+      margin: 0;
+      padding: 0;
+      width: 40vw;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      list-style-type: none;
+    }
+    .menu a {
+      font-family: "Inter", Times, serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      color: #ffffff;
+    }
+
+    .home {
+      grid-area: home;
+
+      display: grid;
+      grid-template-columns: 36% 14% 2% 16% 32%;
+      grid-template-rows: 17.2% 20.7% 24.2% 17.2% 20.7%;
+    }
+    .home p {
+      grid-column: 1/4;
+      grid-row: 1/2;
+
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      margin-left: 110px;
+
+      color: #ffffff;
+    }
+    .home #home-image1 {
+      grid-column-end: 6;
+      grid-row: 1/4;
+
+      background-image: url(assets/images/main_image1.jpg);
+      background-position: top left;
+      background-size: cover;
+    }
+    .home #home-image2 {
+      grid-column: 1/2;
+      grid-row: 3/6;
+
+      background-image: url(assets/images/main_image2.jpg);
+      background-position: top right;
+      background-size: cover;
+    }
+    .home #bigheader {
+      grid-column: 1/6;
+      grid-row: 2/5;
+    }
+    .home h1 {
+      margin: 0;
+      font-family: "Playfair Display", Times, serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 309px;
+      text-align: center;
+
+      color: #ffffff;
+    }
+    .home h2 {
+      margin: -90px;
+
+      font-family: "Playfair Display", Times, serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 284px;
+      text-align: center;
+      white-space: nowrap;
+
+      color: #ffffff;
+    }
+    .home button {
+      grid-column: 3/5;
+      grid-row: 5/6;
+      align-self: center;
+
+      width: 100%;
+      height: 35%;
+
+      font-family: "Inter", Times, serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 38px;
+
+      color: #000000;
+    }
+
     .portfolio {
       grid-area: portfolio;
+      width: 80%;
+      height: 100%;
+      margin: 150px auto;
+      justify-content: space-around;
+      gap: 50px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 3.3% 18.3% 8.3% 25% 5% 16.7%;
     }
-    .testimonials {
-      grid-area: testimonials;
+    .portfolio h3 {
+      grid-area: 1/1/2/3;
+      margin: 0;
+      text-align: center;
+      font-family: "Playfair Display", Times, serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 81.3081px;
+
+      color: #ffffff;
     }
+    .portfolio #portfolio-image1 {
+      grid-area: 2/1/4/2;
+      height: 100%;
+      width: 100%;
+    }
+    .portfolio #portfolio-image2 {
+      grid-area: 2/2/3/3;
+      height: 100%;
+      width: 100%;
+    }
+    .portfolio #portfolio-image3 {
+      grid-area: 4/1/5/2;
+      height: 100%;
+      width: 100%;
+    }
+    .portfolio #portfolio-image4 {
+      grid-area: 3/2/6/3;
+      height: 100%;
+      width: 100%;
+    }
+    .portfolio #portfolio-image5 {
+      grid-area: 5/1/7/2;
+      height: 100%;
+      width: 100%;
+    }
+    .portfolio #portfolio-image6 {
+      grid-area: 6/2/7/3;
+      height: 100%;
+      width: 100%;
+    }
+
     .about {
       grid-area: about;
+      width: 85%;
+      height: 100%;
+      margin: 150px auto;
+      justify-content: space-around;
+      gap: 50px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 18% 35% 47%;
+    }
+    .about h3 {
+      grid-area: 1/1/2/3;
+      margin: 0;
+
+      font-family: "Playfair Display", Times, serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 81.3081px;
+      text-align: center;
+
+      color: #ffffff;
+    }
+    .about #about-p1 {
+      grid-area: 2/1/3/2;
+    }
+    .about #about-p2 {
+      grid-area: 3/1/4/2;
+      margin: 0;
+    }
+    .about #about-p1,
+    .about #about-p2 {
+      font-family: "Inter", Times, serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 38px;
+
+      color: #ffffff;
+    }
+    .about #about-image {
+      grid-area: 2/2/4/3;
+      height: 100%;
+      width: 100%;
+    }
+
+    .testimonials {
+      grid-area: testimonials;
     }
     .contact {
       grid-area: contact;
@@ -51,12 +263,84 @@
     }
   </style>
   <body class="container">
-    <header class="header"></header>
-    <section class="main"></section>
-    <section class="portfolio"></section>
-    <section class="about"></section>
-    <section class="testimonials"></section>
-    <section class="contact"></section>
+    <header class="header">
+      <nav class="logo"><a href="#">Logo</a></nav>
+      <nav>
+        <ul class="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="home" id="home">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <div id="home-image1"></div>
+      <div id="home-image2"></div>
+      <div id="bigheader">
+        <h1>Creative</h1>
+        <h2>Design</h2>
+      </div>
+      <button>Get a Quote</button>
+    </section>
+    <section class="portfolio" id="portfolio">
+      <h3>Portfolio</h3>
+      <img
+        src="assets/images/portfolio_image1.jpg"
+        alt="portfolio-image1"
+        id="portfolio-image1"
+      />
+      <img
+        src="assets/images/portfolio_image2.jpg"
+        alt="portfolio-image2"
+        id="portfolio-image2"
+      />
+      <img
+        src="assets/images/portfolio_image3.jpg"
+        alt="portfolio-image3"
+        id="portfolio-image3"
+      />
+      <img
+        src="assets/images/portfolio_image4.jpg"
+        alt="portfolio-image4"
+        id="portfolio-image4"
+      />
+      <img
+        src="assets/images/portfolio_image5.jpg"
+        alt="portfolio-image5"
+        id="portfolio-image5"
+      />
+      <img
+        src="assets/images/portfolio_image6.jpg"
+        alt="portfolio-image6"
+        id="portfolio-image6"
+      />
+    </section>
+    <section class="about" id="about">
+      <h3>About</h3>
+      <p id="about-p1">
+        We create stunning Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit.We create stunning Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit.
+      </p>
+      <p id="about-p2">
+        After 10 years of experience Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit.We create stunning Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit.We create stunning Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit.
+      </p>
+      <img
+        src="assets/images/about_image.jpg"
+        alt="about image"
+        id="about-image"
+      />
+    </section>
+    <section class="testimonials" id="testimonials"></section>
+    <section class="contact" id="contact"></section>
     <footer class="footer"></footer>
   </body>
 </html>
